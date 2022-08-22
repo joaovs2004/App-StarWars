@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.teste03_escribo">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="teste03_escribo"
         android:name="${applicationName}"
