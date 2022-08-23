@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste03_escribo/components/appbar.dart';
 import 'package:teste03_escribo/screens/homepage.dart';
+import 'package:teste03_escribo/screens/webview.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,10 +10,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _page = 0;
+  int page = 0;
 
   Widget bodyFn() {
-    switch (_page) {
+    switch (page) {
+      case 0:
+        return const HomePage();
+      case 1:
+        return const MyWebView();
       default:
         return const HomePage();
     }
@@ -22,7 +26,28 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: AppBar(
+        leading: TextButton(
+          child: const Text(
+            "Site oficial",
+            style: TextStyle(color: Colors.black45),
+          ),
+          onPressed: () {
+            if (page == 0) {
+              page = 1;
+            } else {
+              page = 0;
+            }
+            setState(() {});
+          },
+        ),
+        actions: const [
+          TextButton(
+            child: Text("Avatar"),
+            onPressed: null,
+          )
+        ],
+      ),
       body: bodyFn(),
     );
   }
