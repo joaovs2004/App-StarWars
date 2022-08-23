@@ -2,8 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:teste03_escribo/webview.dart';
-
+import 'package:teste03_escribo/screens/home.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,12 +11,7 @@ Future main() async {
     await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
   }
 
-  runApp(
-    const MaterialApp(
-      title: "App Star Wars",
-      home: MyApp(),
-    ),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,20 +19,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const TextButton(
-          onPressed: null,
-          child: Text("Site oficial"),
-        ),
-        actions: const [
-          TextButton(
-            onPressed: null,
-            child: Text("Avatar"),
-          )
-        ],
-      ),
-      body: const MyWebView(),
+    return const MaterialApp(
+      title: "App Star Wars",
+      home: Home(),
     );
   }
 }
