@@ -1,29 +1,16 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import '../models/film.dart';
 
-class Film {
-  final String title;
-
-  const Film({
-    required this.title,
-  });
-
-  factory Film.fromJson(Map<String, dynamic> json) {
-    return Film(
-      title: json['title'] as String,
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Films extends StatefulWidget {
+  const Films({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Films> createState() => _FilmsState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _FilmsState extends State<Films> {
   late Future<List<Film>> futureFilm;
 
   Future<List<Film>> loadFilms() async {
