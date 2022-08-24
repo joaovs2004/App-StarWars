@@ -53,6 +53,10 @@ class _CharactersState extends State<Charactrs> {
                   (Character post) => Card(
                     child: ListTile(
                       title: Text(post.name),
+                      trailing: const IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: null,
+                      ),
                     ),
                   ),
                 )

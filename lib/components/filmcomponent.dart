@@ -54,6 +54,10 @@ class _FilmsState extends State<Films> {
                   (Film post) => Card(
                     child: ListTile(
                       title: Text(post.title),
+                      trailing: const IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: null,
+                      ),
                     ),
                   ),
                 )
