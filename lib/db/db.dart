@@ -28,17 +28,36 @@ class DB {
     return id;
   }
 
-  static Future<void> deleteFavorite(int id) async {
+  static Future<void> deleteFavoriteById(int id) async {
     final db = await open();
     try {
       await db.delete("favorites", where: "id = ?", whereArgs: [id]);
     } catch (err) {
-      print("Something went wrong when deleting an item: $err");
+      print("Something went wrong when deleting an favorite: $err");
+    }
+  }
+
+  static Future<void> deleteFavoriteByName(String name) async {
+    final db = await open();
+    try {
+      await db.delete("favorites", where: "name = ?", whereArgs: [name]);
+    } catch (err) {
+      print("Something went wrong when deleting an favorite: $err");
     }
   }
 
   static Future<List<Map<String, dynamic>>> getFavorites() async {
     final db = await open();
     return db.query("favorites", orderBy: "id");
+  }
+
+  static Future<List<Map<String, dynamic>>> getFavoriteFilms() async {
+    final db = await open();
+    return db.query("favorites", orderBy: "id", where: "type = ?", whereArgs: ["film"]);
+  }
+
+  static Future<List<Map<String, dynamic>>> getFavoriteCharacters() async {
+    final db = await open();
+    return db.query("favorites", orderBy: "id", where: "type = ?", whereArgs: ["character"]);
   }
 }
