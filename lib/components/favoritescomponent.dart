@@ -46,7 +46,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     trailing: IconButton(
                       icon: const Icon(Icons.delete),
                       onPressed: () {
-                        DB.deleteFavorite(favorites[id]["id"]);
+                        DB.deleteFavoriteById(favorites[id]["id"]);
                         setState(() {
                           futureFavorites = DB.getFavorites();
                         });
