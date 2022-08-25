@@ -13,6 +13,7 @@ class _AvatarState extends State<Avatar> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        FluttermojiCircleAvatar(),
         Row(
           children: [
             const Text("Save"),
