@@ -37,6 +37,7 @@ dependencies:
   flutter_inappwebview: ^5.4.3
   url_launcher: ^6.1.5
   http: ^0.13.5
+  sqflite: ^2.0.3
 
 dev_dependencies:
   flutter_test:
