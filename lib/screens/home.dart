@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:teste03_escribo/screens/avatar.dart';
 import 'package:teste03_escribo/screens/homepage.dart';
 import 'package:teste03_escribo/screens/webview.dart';
+import 'package:fluttermoji/fluttermoji.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,6 +20,8 @@ class _HomeState extends State<Home> {
         return const HomePage();
       case 1:
         return const MyWebView();
+      case 2:
+        return const Avatar();
       default:
         return const HomePage();
     }
@@ -33,7 +37,7 @@ class _HomeState extends State<Home> {
             style: TextStyle(color: Colors.black45),
           ),
           onPressed: () {
-            if (page == 0) {
+            if (page != 1) {
               page = 1;
             } else {
               page = 0;
@@ -41,10 +45,18 @@ class _HomeState extends State<Home> {
             setState(() {});
           },
         ),
-        actions: const [
+        actions: [
           TextButton(
-            child: Text("Avatar"),
-            onPressed: null,
+            onPressed: () {
+              if (page != 2) {
+                page = 2;
+              } else {
+                page = 0;
+              }
+
+              setState(() {});
+            },
+            child: FluttermojiCircleAvatar(),
           )
         ],
       ),
