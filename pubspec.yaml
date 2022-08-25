@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.1.5
   http: ^0.13.5
   sqflite: ^2.0.3
+  fluttermoji: ^1.0.0
 
 dev_dependencies:
   flutter_test:
