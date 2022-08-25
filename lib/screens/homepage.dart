@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste03_escribo/components/favoritescomponent.dart';
 import 'package:teste03_escribo/components/filmcomponent.dart';
 import 'package:teste03_escribo/components/characterscomponent.dart';
 
@@ -55,12 +56,8 @@ class _HomePageState extends State<HomePage> {
                       child: characters,
                     ),
                     const Center(
-                      child: Text(
-                        'Favoritos',
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                      child: FavoritesPage(),
+                    )
                   ],
                 ),
               )
