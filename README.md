@@ -38,9 +38,9 @@ Caso queria rodar no Pc com um emulador de android
 
 ```bash
 # Primeiramente clone o projeto com
-$ git clone https://github.com/joaovs2004/Teste03-Escribo
+$ git clone https://github.com/joaovs2004/App-StarWars
 # Entre na pasta do projeto
-$ cd Teste03-Escribo/
+$ cd App-StarWars/
 # Instale as dependencias com
 $ flutter pub get
 ```
